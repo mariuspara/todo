@@ -1,0 +1,20 @@
+.todo-list {
+    text-align: center;
+    padding: 20px;
+    border:1px solid #ccc;
+    border-radius:10px;
+    max-width: 768px;
+    margin:0 auto;
+    margin-top:30px;
+}
+.priority-filter p{ 
+    display: inline;
+}
+
+.priority-filters-elements {
+    display: inline-flex;
+}
+
+.priority-filters-elements label, .priority-filters-elements input {
+    margin:5px;
+}

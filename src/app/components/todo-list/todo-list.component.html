@@ -1,0 +1,34 @@
+<div class="todo-list">
+    <h2>Todos</h2>
+    <div class="priority-filter">
+            <p>
+                  Filters:
+            </p>
+            <div class="priority-filters-elements">
+                <p>
+                    <label for="all">All:</label>
+                    <input value="all" type="checkbox" name="filterPriority" id="all" (change)="filterElements($event)">
+                </p>
+                <p>
+                    <label for="high:">High:</label>
+                    <input value="high" type="checkbox" name="filterPriority" id="high:" (change)="filterElements($event)">
+                </p>
+                <p>
+                    <label for="medium">Medium:</label>
+                    <input value="medium" type="checkbox" name="filterPriority" id="medium" (change)="filterElements($event)">
+                </p>
+                <p>
+                    <label for="low">Low:</label>
+                    <input value="low" type="checkbox" name="filterPriority" id="low" (change)="filterElements($event)"> 
+                </p>
+            </div>
+            
+        </div>
+        <app-todo-item
+          *ngFor="let TodoItem of TodoItems;"
+          [todo]="TodoItem"
+          (edit)="handleEdit($event)"
+          (remove)="handleRemove($event)">
+      </app-todo-item>
+      
+</div>

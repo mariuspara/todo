@@ -1,0 +1,29 @@
+.todo-item {
+    display: inline-flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.todo-commands button { 
+    margin:5px;
+    padding: 5px;
+    border-radius: 5px;
+}
+.todo-item-title {
+    width: 200px;
+}
+.red {
+    background-color: #E12B06;
+}
+
+.green {
+    background-color: #99CC99;
+}
+
+.yellow {
+    background-color: #FFCC00;
+}
+
+.gray {
+    background-color: #ccc;
+}

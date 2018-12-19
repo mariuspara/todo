@@ -1,0 +1,18 @@
+<div class="add-todo">
+    <label for="add-todo-input">Add Todo: </label>
+    <input [(ngModel)] = "newTodo" type="text" id="add-todo-input">
+    <button type="submit" (click)="addToDo()"> + </button>
+    <div class="todo-priority">
+    <form name="priorityForm" >
+        <span>Priority: </span>
+        <label for="highTodo">High:</label>
+        <input value="high" type="radio" name="priority" id="highTodo" (change)="priorityChange($event)">
+        <label for="mediumTodo">Medium: </label>
+        <input value="medium" type="radio" name="priority" id="mediumTodo" (change)="priorityChange($event)">
+        <label for="lowTodo">Low:</label>
+        <input value="low" ng-value="true" type="radio" name="priority" id="lowTodo" (change)="priorityChange($event)">
+    </form>
+    </div>
+
+    
+</div>

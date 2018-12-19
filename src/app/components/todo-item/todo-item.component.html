@@ -1,0 +1,30 @@
+<div class="todo-item">
+
+    <div *ngIf="editing" class="todo-item-title">
+        <input 
+          type="text" 
+          [value]="todo.title"
+          (input)="onNameChange(name.value)"
+          #name>
+      </div>
+      <div class="todo-item-title" *ngIf="!editing">
+        {{ todo.title }}
+      </div>
+  <div class="todo-priority">
+    {{ todo.priority }}
+  </div>
+  <div class="todo-commands">
+    <button class="green" (click)="onComplete()"
+    [ngClass]="isComplete? 'green' : 'gray'"
+    >Complete</button>
+    <button class="red" (click)="onRemove()"
+    [ngClass]="isComplete? 'gray' : 'red'"
+    [disabled]="isComplete"
+    >Remove</button>
+    <button class="yellow" (click)="toggleEdit()"
+    [ngClass]="isComplete? 'gray' : 'yellow'"
+    [disabled]="isComplete"
+    >{{ editing ? 'Done' : 'Edit' }}
+    </button>
+  </div>
+</div>
