@@ -8,7 +8,7 @@ import { TodoItem } from '../../models/todoitem.interface'
   templateUrl: './todo-item.component.html',
   styleUrls: ['./todo-item.component.css']
 })
-export class TodoItemComponent implements OnChanges {
+export class TodoItemComponent  {
 
   @Input()
   todo: TodoItem;
@@ -24,11 +24,11 @@ export class TodoItemComponent implements OnChanges {
   
   constructor() {}
 
-  ngOnChanges(changes) {
-    if (changes.todo) {
-      this.todo = Object.assign({}, changes.todo.currentValue);
-    }
-  }
+  // ngOnChanges(changes) {
+  //   if (changes.todo) {
+  //     this.todo = Object.assign({}, changes.todo.currentValue);
+  //   }
+  // }
 
   onComplete(){
     this.isComplete = true;

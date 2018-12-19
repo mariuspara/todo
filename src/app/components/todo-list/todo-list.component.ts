@@ -13,8 +13,13 @@ import { TodoItemService } from '../../app.service'
 export class TodoListComponent implements OnInit {
 
   TodoItems: TodoItem[];
-  filterPriority:string = '';
-  constructor(private TodoItemService: TodoItemService) {}
+
+  filterPriority: string = '';
+
+  constructor(
+    private TodoItemService: TodoItemService
+  ) { }
+  
   ngOnInit() {
     this.TodoItems = this.TodoItemService.getTodoItems();
   }
@@ -34,9 +39,9 @@ export class TodoListComponent implements OnInit {
     });
     this.TodoItemService.updateItems(this.TodoItems)
   }
-  filterElements(event){
+  filterElements(event) {
     this.filterPriority = event.target.value;
-    this.TodoItemService.filterElements(this.filterPriority);
-    this.TodoItems=this.TodoItemService.getTodoItems();
-}
+    this.TodoItems = this.TodoItemService.filterElements(this.filterPriority);
+
+  }
 }

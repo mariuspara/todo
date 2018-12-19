@@ -51,9 +51,14 @@ export class TodoItemService {
 
   filterElements(priority: string) {
     console.log(priority);
-    this.TodoItems = this.TodoItems.filter((TodoItem: TodoItem) => {
-      return TodoItem.priority === priority;
-    });
+    if(priority === 'all')
+      return this.TodoItems;
+    else {
+      let filtredItems: TodoItem[];
+      filtredItems = this.TodoItems.filter((TodoItem: TodoItem) => TodoItem.priority === priority)
+      return filtredItems;
+    }
+    
   }
 
 }
