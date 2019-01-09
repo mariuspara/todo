@@ -33,6 +33,9 @@ export class TodoItemService {
   }];
 
   getTodoItems(): TodoItem[] {
+    if (localStorage.getItem('todos')) {
+      this.TodoItems = JSON.parse(localStorage.getItem('todos'))
+    } 
     return this.TodoItems;
   }
 
@@ -47,6 +50,8 @@ export class TodoItemService {
       done: false
     }
     this.TodoItems.push(todo);
+    localStorage.setItem('todos', JSON.stringify(this.TodoItems));
+
   }
 
   filterElements(priority: string) {
